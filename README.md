@@ -1,5 +1,7 @@
 # Slugifier
 
+[![Build Status](https://secure.travis-ci.org/pedrogimenez/slugifier.svg?branch=master)](http://travis-ci.org/pedrogimenez/slugifier)
+
 Heavily-based on [Keyvan Akbary's PHP slugifier](https://github.com/keyvanakbary/slugifier).
 
 We use this at [Chicisimo](https://github.com/chicisimo).
