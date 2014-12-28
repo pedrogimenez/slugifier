@@ -7,6 +7,8 @@ class Slugifier
     string
   end
 
+  private
+
   def self.normalize(string)
     string = transliterate(string)
     string.downcase!
@@ -35,4 +37,6 @@ class Slugifier
       "Ŕ"=>"R", "ŕ"=>"r", "ü" => "u", "ƒ" => "f"
     }
   end
+
+  private_class_method :normalize, :transliterate, :table
 end

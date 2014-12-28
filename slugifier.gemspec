@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name                   = "slugifier"
-  spec.version                = "1.0.0"
+  spec.version                = "1.0.1"
   spec.date                   = "2014-12-28"
   spec.summary                = "Returns a slug given a string."
   spec.description            = "Returns a slug given a string."
