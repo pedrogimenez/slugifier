@@ -1,7 +1,7 @@
 require_relative "../lib/slugifier"
 
 describe Slugifier do
-  it "returns an slug" do
+  it "returns a slug" do
     examples.each { |string, slug| expect(Slugifier.slugify(string)).to eq(slug) }
   end
 
