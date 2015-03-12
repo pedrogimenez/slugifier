@@ -17,7 +17,7 @@ class Slugifier
   end
 
   def self.transliterate(string)
-    transliteration = string
+    transliteration = string.dup
     table.each { |character, translit| transliteration.gsub!(character, translit) }
     transliteration
   end

@@ -5,6 +5,14 @@ describe Slugifier do
     examples.each { |string, slug| expect(Slugifier.slugify(string)).to eq(slug) }
   end
 
+  it "doesn't modify the given string object" do
+    string = "Word"
+
+    Slugifier.slugify(string)
+
+    expect(string).to eq("Word")
+  end
+
   def examples
     [
       ["Word", "word"],
