@@ -1,28 +1,28 @@
-class Slugifier
-  UNWANTED_CHARACTERS = /([^a-z0-9])+/;
+module Slugifier
+  extend self
 
-  def self.slugify(string)
-    string = normalize(string)
-    string.gsub!(UNWANTED_CHARACTERS, "-")
-    string
+  UNWANTED_CHARACTERS = /([^a-z0-9])+/
+
+  def slugify(string)
+    normalize(string).tap {|s| s.gsub!(UNWANTED_CHARACTERS, "-") }
   end
 
   private
 
-  def self.normalize(string)
-    string = transliterate(string)
-    string.downcase!
-    string.strip!
-    string
+  def normalize(string)
+    transliterate(string).tap do |s|
+      s.downcase!
+      s.strip!
+    end
   end
 
-  def self.transliterate(string)
+  def transliterate(string)
     transliteration = string.dup
     table.each { |character, translit| transliteration.gsub!(character, translit) }
     transliteration
   end
 
-  def self.table
+  def table
     {
       # Latin
       "°" => "0", "æ" => "ae", "ǽ" => "ae", "À" => "A", "Á" => "A", "Â" => "A", "Ã" => "A", "Å" => "A", "Ǻ" => "A",
@@ -111,6 +111,4 @@ class Slugifier
       "¹" => "1", "²" => "2", "³" => "3", "¶" => "P"
     }
   end
-
-  private_class_method :normalize, :transliterate, :table
 end
