@@ -4,7 +4,7 @@ module Slugifier
   UNWANTED_CHARACTERS = /([^a-z0-9])+/
 
   def slugify(string)
-    normalize(string).tap {|s| s.gsub!(UNWANTED_CHARACTERS, "-") }
+    normalize(string).tap { |s| s.gsub!(UNWANTED_CHARACTERS, "-") }
   end
 
   private
